@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('web.home.urls', namespace='home')),
     url(r'^news/', include('web.news.urls', namespace='news')),
-    url(r'^projects/', include('web.projects.urls', namespace='projects'))
+    url(r'^projects/', include('web.projects.urls', namespace='projects')),
+    url(r'^partners/', include('web.partners.urls', namespace='partners'))
 ]

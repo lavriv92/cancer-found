@@ -30,17 +30,24 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = (
+CONTRIB_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+)
+
+WEB_APPS = (
     'web.home',
     'web.news',
     'web.projects',
+    'web.media',
+    'web.partners',
 )
+
+INSTALLED_APPS = CONTRIB_APPS + WEB_APPS
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
