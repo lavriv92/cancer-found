@@ -2,12 +2,12 @@ from django.views.generic import TemplateView
 
 
 class HomeView(TemplateView):
-    template_name = 'base.html'
+    template_name = 'home/index.html'
 
 
 class AboutView(TemplateView):
-    template_name = 'about.html'
+    template_name = 'home/about.html'
 
 
 class ContactsView(TemplateView):
-    template_name = 'contacts.html'
+    template_name = 'home/contacts.html'
