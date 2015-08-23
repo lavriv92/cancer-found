@@ -3,30 +3,5 @@
   <div class="menu-title">
     <div class="close">&times;</div>
   </div>
-  <ul>
-    <li>
-      <a href="{% url 'home:index' %}">Home</a>
-    </li>
-    <li>
-      <a href="{% url 'news:list' %}">News</a>
-    </li>
-    <li>
-      <a href="#">Media</a>
-    </li>
-    <li>
-      <a href="{% url 'home:about' %}">About</a>
-    </li>
-    <li>
-      <a href="#">Reports</a>
-    </li>
-    <li>
-      <a href="{% url 'projects:list' %}">Projects</a>
-    </li>
-    <li>
-      <a href="{% url 'home:contacts' %}">Contacts</a>
-    </li>
-    <li>
-      <a href="{% url 'partners:list' %}">Partners</a>
-    </li>
-  </ul>
+  {% include 'partials/menu_list.html' %}
 </div>
