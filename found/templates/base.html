@@ -6,10 +6,11 @@
     {% include 'partials/styles.html' %}
   </head>
   <body>
+    {% include 'partials/search_bar.html' %}
+    {% include 'partials/menu.html' %}
     <div class="main">
-      <div class="content-block">
-        pass  
-      </div>
+      {% block content %}{% endblock content %}
     </div>
+    {% include 'partials/scripts.html' %}
   </body>
 </html>

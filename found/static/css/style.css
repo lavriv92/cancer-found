@@ -1,15 +1,132 @@
-html {
+/* Layout */
+
+html, body, .main {
   height: 100%;
   width: 100%;
 }
 
-html, .main {
-  height: 100%;
-  width: 100%;
+body {
+  margin: 0;
 }
 
 .content-block {
   height: 100%;
-  width: 100%;
-  background: red;
 }
+
+.grey {
+  background: #ccc;
+}
+
+/* end layout */
+
+
+/* Menu */
+
+.menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: lightyellow;
+  z-index: 500;
+  min-width: 30%;
+  height: 100%;
+  display: none;
+}
+
+.menu ul {
+  padding: 20pt 10pt;
+}
+
+.menu ul>li {
+  list-style: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu ul>li a {
+  text-decoration: none;
+  color: #444;
+  font-size: 20pt;
+}
+
+.menu ul li a:hover {
+  color: lightgreen;
+}
+
+.menu .menu-title {
+  height: 30pt;
+}
+
+.menu .menu-title .close {
+  float: right;
+  padding: 0 20pt;
+  font-size: 30pt;
+  cursor: pointer;
+  color: orange;
+  font-weight: lighter;
+}
+
+.menu-open {
+  position: fixed;
+  right: 20pt;
+  top: 20pt;
+  background: lightgreen;
+  padding: 0 10pt;
+  font-size: 22pt;
+  text-align: center;
+  cursor: pointer;
+  color: orange;
+}
+
+/* End menu */
+
+
+/* Search */
+
+.search {
+  position: fixed;
+  left: 20pt;
+  top: 20pt;
+  height: 20pt;
+  padding: 0pt 20pt;
+  z-index: 500;
+  display: flex;
+}
+
+.search .search-icon {
+  width: 20pt;
+  height: 40pt;
+  background: lightgreen;
+  text-align: center;
+  padding: 0 10pt;
+  font-size: 24pt;
+}
+
+.search .search-icon-text {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  display: block;
+  color: orange;
+  cursor: pointer;
+}
+
+.search .search-input {
+  display: none;
+
+  transition: width 1s ease-out 0.5s;
+  -moz-transition: width 1s ease-out 0.5s;
+  -webkit-transition: width 1s ease-out 0.5s;
+  -o-transition: width 1s ease-out 0.5s;
+  -ms-transition: width 1s ease-out 0.5s;
+}
+
+.search .search-input input {
+  border: none;
+  width: 217pt;
+  padding: 20pt 10pt;
+  border-radius: 0;
+}
+
+/* End search */
