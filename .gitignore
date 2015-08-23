@@ -1,3 +1,4 @@
 *.pyc
 __pycache__
 found/static/js/libs
+found/db.sqlite3
