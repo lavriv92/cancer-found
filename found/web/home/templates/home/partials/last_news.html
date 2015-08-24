@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="list-block">
+  {% for entry in last_news %}
+    <div class="entry-item">
+      <div class="entry-item-image">
+        <img src="{% static 'img/DSC_1754.JPG' %}" width="330" height="300" alt="entry image" />
+      </div>
+      <div class="entry-item-title">
+        {{ entry.title }}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+<div class="all-link">
+  <a href="{% url 'news:list' %}">Переглянути всі новини</a>
+</div>
