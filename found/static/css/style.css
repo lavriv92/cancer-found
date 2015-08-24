@@ -177,6 +177,39 @@ body {
   color: #ffffff;
 }
 
+.block-content {
+  margin: 20pt;
+}
+
+.list-block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.list-block .entry-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 auto;
+  text-align: center;
+}
+
+.all-link {
+  margin: 20pt 0;
+  text-align: center;
+}
+
+.all-link a {
+  color: #fff;
+  background: #3777d6;
+  padding: 20pt;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 22px;
+  margin-bottom: 20pt;
+  display: inline-block;
+}
+
 /* End common */
 
 
@@ -203,6 +236,13 @@ body {
   background: #581bb4;
 }
 /* end news page */
+
+/* partners page */
+
+.partners-content-header {
+    background: #b4501b;
+}
+/* end partnres page */
 
 @media (max-width: 480px) {
   .menu {
