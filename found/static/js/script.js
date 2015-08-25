@@ -1,13 +1,19 @@
 (function () {
   var Application = {};
 
-  Application.MenuIcon = function () {
-    this.selector = $('.menu-open');
-  };
-
   Application.Menu = function () {
     this.selector = $('.menu');
+    this.iconSelector = $('.menu-open');
     this.closeSelector = this.selector.find('.close');
+
+    this.closeSelector.on('click', function () {
+      this.close();
+    }.bind(this));
+
+    this.iconSelector.on('click', function () {
+      this.open();
+    }.bind(this));
+
   }
 
   Application.Menu.prototype = {
@@ -24,27 +30,24 @@
     this.selector = $('.search'),
     this.inputSelector = this.selector.find('.search-input');
     this.iconSelector = this.selector.find('.search-icon');
+
+    this.iconSelector.on('click', function () {
+      this.toggle();
+    }.bind(this));
   };
 
   Application.SearchBar.prototype = {
     toggle: function () {
-      this.searchInput.fadeToggle();
+      this.inputSelector.fadeToggle();
     }
-  }
+  };
 
-  var menu = new Application.Menu(),
-      menuIcon = new Application.MenuIcon(),
-      searchBar = new Application.SearchBar();
+  Application.init = function () {
+    var menu = new Application.Menu();
+    var searchBar = new Application.SearchBar();
+  };
 
-  menu.closeSelector.on('click', function () {
-    menu.close();
-  });
+  Application.init();
 
-  menuIcon.selector.on('click', function () {
-    menu.open();
-  });
 
-  searchBar.iconSelector.on('click', function () {
-    searchBar.inputSelector.toggle();
-  });
 })()
