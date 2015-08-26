@@ -2,5 +2,5 @@
 __pycache__
 found/static/js/libs
 found/db.sqlite3
-found/static/uploads
+found/media
 .DS_Store

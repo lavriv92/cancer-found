@@ -1,10 +1,16 @@
 from django.db import models
+from django.conf import settings
 from django.utils.translation import ugettext as _
 
 from web.projects.models import Project
 
 
 class Entry(models.Model):
+    main_image = models.ImageField(
+        _('main image'),
+        null=True,
+        upload_to=settings.NEWS_UPLOAD_FOLDER
+    )
     project = models.ForeignKey(Project, verbose_name=_('project'), null=True)
     title = models.CharField(_('title'), max_length=255)
     body = models.TextField(_('body'))

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="content-block news-background">
+<div class="content-block news-background" style="background: url({{ entry.main_image.url }})">
   <div class="detail-block-text">
     <h1>{{ entry.title | title }}</h1>
   </div>

@@ -20,7 +20,7 @@ class Galery(models.Model):
 
 
 class Photo(models.Model):
-    image = models.FileField(_('image'), upload_to="static/uploads")
+    image = models.FileField(_('image'), upload_to="photos")
     created = models.DateTimeField(_('created'), auto_now_add=True)
     updated = models.DateTimeField(_('updated'), auto_now=True)
 
