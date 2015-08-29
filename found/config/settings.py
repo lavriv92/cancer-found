@@ -122,3 +122,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 NEWS_UPLOAD_FOLDER = 'news'
+
+MEMBERS_UPLOAD_FOLDER = 'members'

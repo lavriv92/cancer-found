@@ -1,3 +1,29 @@
 from django.db import models
+from django.conf import settings
+from django.utils.translation import ugettext as _
 
-# Create your models here.
+
+class MemeberGroup(models.Model):
+    name = models.CharField(_('name'), max_length=255)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _('group')
+        verbose_name_plural = _('groups')
+
+
+class Memeber(models.Model):
+    photo = models.ImageField(_('photo'),
+        upload_to=settings.MEMBERS_UPLOAD_FOLDER)
+    first_name = models.CharField(_('first name'), max_length=255)
+    last_name = models.CharField(_('last name'), max_length=255)
+    position = models.CharField(_('position'), max_length=255)
+
+    class Meta:
+        verbose_name = _('member')
+        verbose_name_plural = _('members')
+
+    @property
+    def full_name(self):
+        return '{} {}'.format(self.first_name, self.last_name)
