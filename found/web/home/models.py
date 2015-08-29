@@ -19,6 +19,9 @@ class Memeber(models.Model):
     first_name = models.CharField(_('first name'), max_length=255)
     last_name = models.CharField(_('last name'), max_length=255)
     position = models.CharField(_('position'), max_length=255)
+    created = models.DateTimeField(_('created'), auto_now_add=True)
+    updated = models.DateTimeField(_('updated'), auto_now=True)
+
 
     class Meta:
         verbose_name = _('member')
@@ -27,3 +30,26 @@ class Memeber(models.Model):
     @property
     def full_name(self):
         return '{} {}'.format(self.first_name, self.last_name)
+
+
+class Document(models.Model):
+    name = models.CharField(_('name'), max_length=255)
+    doc_file = models.FileField(_('doc_file'),
+        upload_to=settings.FILES_UPLOAD_FOLDER)
+    created = models.DateTimeField(_('created'), auto_now_add=True)
+    updated = models.DateTimeField(_('updated'), auto_now=True)
+
+    class Meta:
+        verbose_name = _('document')
+        verbose_name_plural = _('documents')
+
+
+class VolonteerTask(models.Model):
+    title = models.CharField(_('title'), max_length=255)
+    description = models.TextField(_('description'))
+    created = models.DateTimeField(_('created'), auto_now_add=True)
+    updated = models.DateTimeField(_('updated'), auto_now=True)
+
+    class Meta:
+        verbose_name = _('task')
+        verbose_name_plural = _('tasks')

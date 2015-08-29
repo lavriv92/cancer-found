@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 
 from web.projects.models import Project
 from web.news.models import Entry
+from .models import MemeberGroup, Document
 
 
 class HomeView(TemplateView):
@@ -17,7 +18,14 @@ class HomeView(TemplateView):
 
 
 class AboutView(TemplateView):
+
     template_name = 'home/about.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutView, self).get_context_data(**kwargs)
+        context['member_groups'] = MemeberGroup.objects.select_related('members').all()
+        context['documents'] = Document.objects.all().order_by('-created')
+        return context
 
 
 class ContactsView(TemplateView):
