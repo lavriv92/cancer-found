@@ -29,5 +29,5 @@ urlpatterns = [
     url(r'^news/', include('web.news.urls', namespace='news')),
     url(r'^projects/', include('web.projects.urls', namespace='projects')),
     url(r'^partners/', include('web.partners.urls', namespace='partners')),
-    url(r'^reports/', include('web.reports.urls'), namespace='reports')
+    url(r'^reports/', include('web.reports.urls', namespace='reports'))
 ]
