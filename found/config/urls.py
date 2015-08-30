@@ -31,5 +31,5 @@ urlpatterns = [
     url(r'^partners/', include('web.partners.urls', namespace='partners')),
     url(r'^reports/', include('web.reports.urls', namespace='reports')),
     url(r'^mediafiles/', include('web.media.urls', namespace='mediafiles')),
-    url(r'^faq', include('web.faq.urls', namespace='faq'))
+    url(r'^faq/', include('web.faq.urls', namespace='faq'))
 ]

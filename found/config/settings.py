@@ -45,7 +45,8 @@ WEB_APPS = (
     'web.projects',
     'web.media',
     'web.partners',
-    'web.reports'
+    'web.reports',
+    'web.faq',
 )
 
 INSTALLED_APPS = CONTRIB_APPS + WEB_APPS
