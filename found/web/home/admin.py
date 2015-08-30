@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import MemeberGroup, Memeber, Document, VolonteerTask
+from .models import MemeberGroup, Memeber, Document, VolonteerTask 
 
 
 class MemeberGroupAdmin(admin.ModelAdmin):
@@ -20,6 +20,7 @@ class DocumentAdmin(admin.ModelAdmin):
 
 class VolonteerTaskAdmin(admin.ModelAdmin):
     list_display = ('title', )
+
 
 admin.site.register(MemeberGroup, MemeberGroupAdmin)
 admin.site.register(Memeber, MemeberAdmin)
