@@ -45,6 +45,7 @@ WEB_APPS = (
     'web.projects',
     'web.media',
     'web.partners',
+    'web.reports'
 )
 
 INSTALLED_APPS = CONTRIB_APPS + WEB_APPS
@@ -126,3 +127,5 @@ NEWS_UPLOAD_FOLDER = 'news'
 MEMBERS_UPLOAD_FOLDER = 'members'
 
 FILES_UPLOAD_FOLDER = 'files'
+
+REPORTS_UPLOAD_FOLDER = 'reports'
