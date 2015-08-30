@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<div class="content-block content-background">
+{% load static %}
 
-</div>
+
+{% block content %}
 <div class="content-block">
   <div class="block-header news-content-header">
     <h2>Новини</h2>
+  </div>
+  <div class="content">
+    <div class="list-block">
+      {% for entry in object_list %}
+        <div class="entry-item">
+          <div class="entry-item-image">
+            <img src="{{ entry.main_image.url }}" width="330" height="300" alt="entry image" />
+          </div>
+          <div class="entry-item-title">
+            <a href="{% url 'news:detail' entry.pk %}">{{ entry.title }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% endblock %}
