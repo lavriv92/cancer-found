@@ -4,7 +4,7 @@ from django.utils.translation import ugettext as _
 
 
 class MemeberGroup(models.Model):
-    name = models.CharField(_('name'), max_length=255)
+    name = models.CharField(_('name'), max_length=255, unique=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -33,7 +33,7 @@ class Memeber(models.Model):
 
 
 class Document(models.Model):
-    name = models.CharField(_('name'), max_length=255)
+    name = models.CharField(_('name'), max_length=255, unique=True)
     doc_file = models.FileField(_('doc_file'),
         upload_to=settings.FILES_UPLOAD_FOLDER)
     created = models.DateTimeField(_('created'), auto_now_add=True)
