@@ -1,15 +1,23 @@
 from django.contrib import admin
 
-from .models import Galery, Photo
+from .models import PhotoGroup, Photo, VideoGroup, Video
 
-class GaleryAdmin(admin.ModelAdmin):
-    model = Galery
+class PhotoGroupAdmin(admin.ModelAdmin):
     list_display = ('title', )
 
 
 class PhotoAdmin(admin.ModelAdmin):
-    model = Photo
+    pass
 
 
-admin.site.register(Galery, GaleryAdmin)
+class VideoGroupAdmin(admin.ModelAdmin):
+    pass
+
+
+class VideoAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(PhotoGroup, PhotoGroupAdmin)
 admin.site.register(Photo, PhotoAdmin)
+admin.site.register(VideoGroup, VideoGroupAdmin)
+admin.site.register(Video, VideoAdmin)
