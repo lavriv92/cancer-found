@@ -4,7 +4,7 @@ from .models import PhotoGroup, VideoGroup
 
 
 class MediaView(TemplateView):
-    templates = 'media/view.html'
+    template_name = 'media/view.html'
 
     def get_context_data(self, **kwargs):
         context = super(MediaView, self).get_context_data(**kwargs)
