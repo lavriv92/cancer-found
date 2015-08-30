@@ -11,7 +11,8 @@ class Entry(models.Model):
         null=True,
         upload_to=settings.NEWS_UPLOAD_FOLDER
     )
-    project = models.ForeignKey(Project, verbose_name=_('project'), null=True)
+    project = models.ForeignKey(Project, related_name='entries',
+        verbose_name=_('project'), null=True)
     title = models.CharField(_('title'), max_length=255, unique=True)
     body = models.TextField(_('body'))
     is_recomended = models.BooleanField(_('is recomended'), default=False)

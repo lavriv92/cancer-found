@@ -8,5 +8,10 @@
   <div class="block-header projects-content-header">
     <h2>Проекти</h2>
   </div>
+  <div class="block-content">
+    {% for project in object_list %}
+      {{ project }}
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}

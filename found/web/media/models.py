@@ -34,6 +34,7 @@ class Photo(models.Model):
     def __str__(self):
         return '{}: {}'.format(_('photo'), self.src)
 
+
 class VideoGroup(models.Model):
     title = models.CharField(_('title'), max_length=255)
     description = models.TextField(_('description'))

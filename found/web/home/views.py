@@ -18,7 +18,6 @@ class HomeView(TemplateView):
 
 
 class AboutView(TemplateView):
-
     template_name = 'home/about.html'
 
     def get_context_data(self, **kwargs):
