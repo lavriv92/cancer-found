@@ -1,53 +1,18 @@
 (function () {
-  var Application = {};
+  function createTabs(argument) {
+    var tabs = $('.tabs-header .tab');
+    var tabsContent = $('.tabs-body .tab-content');
 
-  Application.Menu = function () {
-    this.selector = $('.menu');
-    this.iconSelector = $('.menu-open');
-    this.closeSelector = this.selector.find('.close');
+    tabs.click(function () {
 
-    this.closeSelector.on('click', function () {
-      this.close();
-    }.bind(this));
+      var id = $(this).attr('id');
+      var contentId = ['#content', id].join('-');
 
-    this.iconSelector.on('click', function () {
-      this.open();
-    }.bind(this));
-
+      tabs.removeClass('active');
+      $(this).addClass('active');
+      tabsContent.removeClass('active');
+      $(contentId).addClass('active');
+    });
   }
-
-  Application.Menu.prototype = {
-    close: function () {
-      this.selector.fadeOut();
-    },
-
-    open: function () {
-      this.selector.fadeIn();
-    }
-  };
-
-  Application.SearchBar = function () {
-    this.selector = $('.search'),
-    this.inputSelector = this.selector.find('.search-input');
-    this.iconSelector = this.selector.find('.search-icon');
-
-    this.iconSelector.on('click', function () {
-      this.toggle();
-    }.bind(this));
-  };
-
-  Application.SearchBar.prototype = {
-    toggle: function () {
-      this.inputSelector.fadeToggle();
-    }
-  };
-
-  Application.init = function () {
-    var menu = new Application.Menu();
-    var searchBar = new Application.SearchBar();
-  };
-
-  Application.init();
-
-
+  createTabs();
 })()

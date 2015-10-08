@@ -14,6 +14,12 @@ class HomeView(TemplateView):
             '-created'
         )[:3]
         context['last_news'] = Entry.objects.all().order_by('-created')[:3]
+        context['recomended_news'] = Entry.objects.filter(
+            is_recomended=True
+        ).order_by('-created')[:3]
+        context['anounsed_news'] = Entry.objects.filter(
+            is_anouns=True
+        ).order_by('-created')[:3]
         return context
 
 

@@ -1,63 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="content-block home-background">
-  <div class="content-block-text">
-    <h1>Національний інститут раку</h1>
+  {% include 'home/partials/home_header.html' %}
+  <div class="block">
+    {% include 'home/partials/about.html' %}
   </div>
-</div>
-<div class="content-block">
-  <div class="block-header news-content-header">
-    <h2>Новини</h2>
-  </div>
-  <div class="block-content">
+  <div class="block grey-block">
     {% include 'home/partials/last_news.html' %}
   </div>
-</div>
-<div class="content-block projects-content-header">
-  <div class="block-header">
-    <h2>Проекти</h2>
+  <div class="block">
+    {% include 'home/partials/last_media.html' %}
   </div>
-  <div class="block-content">
-    {% include 'home/partials/last_projects.html' %}
+  <div class="block">
+    {% include 'home/partials/home_partners.html' %}
   </div>
-</div>
-<div class="content-block">
-  <div class="block-header">
-    <h2>Про нас</h2>
-  </div>
-  <div class="block-content">
-
-  </div>
-</div>
-<div class="content-block">
-  <div class="block-header">
-    <h2>Медіа</h2>
-  </div>
-  <div class="block-content">
-
-  </div>
-</div>
-<div class="content-block">
-  <div class="block-header partners-content-header">
-    <h2>Партнери та спонсори</h2>
-  </div>
-  <div class="block-content">
-
-  </div>
-</div>
-<div class="content-block">
-  <div class="block-header">
-    <h2>Звіти</h2>
-  </div>
-  <div class="block-content">
-
-  </div>
-</div>
-<div class="content-block">
-  <div class="block-header">
-    <h2>Контакти</h2>
-  </div>
-  <div class="block-content"></div>
-</div>
 {% endblock content %}

@@ -1,17 +1,51 @@
 {% load static %}
 
-<div class="list-block">
-  {% for entry in last_news %}
-    <div class="entry-item">
-      <div class="entry-item-image">
-        <img src="{{ entry.main_image.url }}" width="330" height="300" alt="entry image" />
+<div class="block-content">
+  <h5>Новини</h5>
+  <div class="section-title">
+    <div class="text-section">
+      <h3>Останні новини</h3>
+      <div class="border-title"></div>
+    </div>
+    <div class="radio-section">
+      <div class="radio-item">
+        <input type="radio" name="name" value="">
+        <span for="">Останні новини</span>
       </div>
-      <div class="entry-item-title">
-        <a href="{% url 'news:detail' entry.pk %}">{{ entry.title }}</a>
+      <div class="radio-item">
+        <input type="radio" name="name" value="">
+        <span for="">Рекомендовані</span>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="name" value="">
+        <span for="">Анонси</span>
       </div>
     </div>
-  {% endfor %}
-</div>
-<div class="all-link">
-  <a href="{% url 'news:list' %}">Переглянути всі новини</a>
+  </div>
+  <div class="section-body">
+    <div class="news-section active" id="last-news">
+      {% for entry in last_news %}
+        <div class="entry">
+          <span class="entry-date">{{ entry.created | date:"d.m.y" }}</span>
+          <img src="{{ entry.main_image.url }}" alt=""/>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="news-section" id="recomended-news">
+      {% for entry in recomended_news %}
+        <div class="entry">
+          <span class="entry-date">{{ entry.created | date:"d.m.y" }}</span>
+          <img src="{{ entry.main_image.url }}" alt=""/>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="news-section" id="anounced-news">
+      {% for entry in anounsed_news %}
+        <div class="entry">
+          <span class="entry-date">{{ entry.created | date:"d.m.y" }}</span>
+          <img src="{{ entry.main_image.url }}" alt=""/>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
